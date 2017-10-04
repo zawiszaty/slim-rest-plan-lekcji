@@ -1,15 +1,17 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: zawisza
- * Date: 04.10.2017
- * Time: 14:18
- */
+
 
 namespace App\Utils;
 
 
-class UserLogic
-{
+use App\Model\User;
 
+class UserLogic extends Logic
+{
+    public function login(array $verifyUser)
+    {
+        $user = User::where('login', $verifyUser['login']);
+        return $user;
+
+    }
 }

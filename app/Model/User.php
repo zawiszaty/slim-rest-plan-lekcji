@@ -9,7 +9,9 @@
 namespace App\Model;
 
 
-class User
-{
+use Illuminate\Database\Eloquent\Model;
 
+class User extends Model
+{
+    protected $table = 'users';
 }

@@ -2,11 +2,18 @@
 
 namespace App\Controllers;
 
-
-use Slim\Http\Request;
+use \Psr\Http\Message\ServerRequestInterface as Request;
+use \Psr\Http\Message\ResponseInterface as Response;
 
 class UserController extends Controllers
 {
+    public function login(Request $request, Response $response): Response
+    {
+        $user = $request->getParam('user');
 
+        $auth = $this->UserLogic->login($user);
+
+        return $response->withJson($auth, 200);
+    }
 
 }

@@ -5,6 +5,7 @@ require 'vendor/autoload.php';
 $app = new \Slim\App([
     'settings' => [
         'displayErrorDetails' => true,
+        "determineRouteBeforeAppMiddleware" => true,
         'db' => [
             'driver' => 'mysql',
             'host' => 'localhost',
@@ -44,11 +45,17 @@ $container['ClassListController'] = function ($container) {
 $container['PlanController'] = function ($container) {
     return new \App\Controllers\PlanController($container);
 };
+$container['UserController'] = function ($container) {
+    return new \App\Controllers\UserController($container);
+};
 
 $container['PlanLogic'] = function ($container) {
     return new \App\Utils\PlanLogic($container);
 };
 $container['ClassListLogic'] = function ($container) {
     return new \App\Utils\ClassListLogic($container);
+};
+$container['UserLogic'] = function ($container) {
+    return new \App\Utils\UserLogic($container);
 };
 require 'app/Routes.php';

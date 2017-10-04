@@ -11,6 +11,7 @@ class ClassListController extends Controllers
     {
         $type = $request->getAttribute('type');
         $classList = $this->cotainer->ClassListLogic->getAllType($type);
+
         return $response->withJson($classList, 200);
     }
 
