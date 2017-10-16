@@ -2,22 +2,21 @@
 
 require 'vendor/autoload.php';
 
-$app = new \Slim\App([
-    'settings' => [
-        'displayErrorDetails' => true,
-        "determineRouteBeforeAppMiddleware" => true,
-        'db' => [
-            'driver' => 'mysql',
-            'host' => 'localhost',
-            'database' => 'slimrest',
-            'username' => 'root',
-            'password' => 'admin',
-            'charset' => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix' => '',
-        ]
-    ],
-]);
+$config['displayErrorDetails'] = true;
+$config['addContentLengthHeader'] = false;
+$config['db'] = [
+    'driver' => 'mysql',
+    'host' => 'localhost',
+    'database' => 'slimrest',
+    'username' => 'root',
+    'password' => 'admin',
+    'charset' => 'utf8',
+    'collation' => 'utf8_unicode_ci',
+    'prefix' => '',
+];
+
+$app = new \Slim\App(["settings" => $config]);
+
 $app->options('/{routes:.+}', function ($request, $response, $args) {
     return $response;
 });
@@ -39,6 +38,7 @@ $container['db'] = function ($container) use ($capsule) {
     return $capsule;
 };
 
+
 $container['ClassListController'] = function ($container) {
     return new \App\Controllers\ClassListController($container);
 };
@@ -57,5 +57,11 @@ $container['ClassListLogic'] = function ($container) {
 };
 $container['UserLogic'] = function ($container) {
     return new \App\Utils\UserLogic($container);
+};
+$container['Auth'] = function ($container) {
+    return new \App\Utils\Auth($container);
+};
+$container{'Validator'} = function ($container) {
+    return new \App\Validator\Validator;
 };
 require 'app/Routes.php';

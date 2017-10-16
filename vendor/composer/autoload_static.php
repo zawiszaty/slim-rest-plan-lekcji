@@ -19,6 +19,10 @@ class ComposerStaticInitbc70edbc2a1c2a73cf209c5e6a93a022
             'Symfony\\Component\\Translation\\' => 30,
             'Slim\\' => 5,
         ),
+        'R' => 
+        array (
+            'Respect\\Validation\\' => 19,
+        ),
         'P' => 
         array (
             'Psr\\SimpleCache\\' => 16,
@@ -63,6 +67,10 @@ class ComposerStaticInitbc70edbc2a1c2a73cf209c5e6a93a022
         'Slim\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
+        ),
+        'Respect\\Validation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/respect/validation/library',
         ),
         'Psr\\SimpleCache\\' => 
         array (

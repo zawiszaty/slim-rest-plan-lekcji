@@ -11,9 +11,23 @@ class UserController extends Controllers
     {
         $user = $request->getParam('user');
 
-        $auth = $this->UserLogic->login($user);
+        $auth = $this->cotainer->UserLogic->login($user);
 
+        if ($auth == '') {
+            return $response->withJson('error', 403);
+        }
         return $response->withJson($auth, 200);
+    }
+
+    public function auth(Request $request, Response $response): Response
+    {
+        $token = $request->getParam('token');
+
+        if ($this->cotainer->Auth->auth($token)) {
+            return $response->withJson('success', 200);
+        } else {
+            return $response->withJson('error', 403);
+        }
     }
 
 }
