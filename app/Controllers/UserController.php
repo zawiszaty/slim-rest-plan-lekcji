@@ -21,13 +21,7 @@ class UserController extends Controllers
 
     public function auth(Request $request, Response $response): Response
     {
-        $token = $request->getParam('token');
-
-        if ($this->cotainer->Auth->auth($token)) {
-            return $response->withJson('success', 200);
-        } else {
-            return $response->withJson('error', 403);
-        }
+        return $response->withJson('success', 200);
     }
 
 }

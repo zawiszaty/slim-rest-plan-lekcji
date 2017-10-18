@@ -17,6 +17,7 @@ class ComposerStaticInitbc70edbc2a1c2a73cf209c5e6a93a022
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\Translation\\' => 30,
+            'Slim\\Middleware\\' => 16,
             'Slim\\' => 5,
         ),
         'R' => 
@@ -26,6 +27,7 @@ class ComposerStaticInitbc70edbc2a1c2a73cf209c5e6a93a022
         'P' => 
         array (
             'Psr\\SimpleCache\\' => 16,
+            'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
         ),
@@ -39,6 +41,7 @@ class ComposerStaticInitbc70edbc2a1c2a73cf209c5e6a93a022
         ),
         'F' => 
         array (
+            'Firebase\\JWT\\' => 13,
             'FastRoute\\' => 10,
         ),
         'D' => 
@@ -64,6 +67,10 @@ class ComposerStaticInitbc70edbc2a1c2a73cf209c5e6a93a022
         array (
             0 => __DIR__ . '/..' . '/symfony/translation',
         ),
+        'Slim\\Middleware\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tuupola/slim-jwt-auth/src',
+        ),
         'Slim\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
@@ -75,6 +82,10 @@ class ComposerStaticInitbc70edbc2a1c2a73cf209c5e6a93a022
         'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
         'Psr\\Http\\Message\\' => 
         array (
@@ -103,6 +114,10 @@ class ComposerStaticInitbc70edbc2a1c2a73cf209c5e6a93a022
         'Illuminate\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/container',
+        ),
+        'Firebase\\JWT\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
         ),
         'FastRoute\\' => 
         array (
