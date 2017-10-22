@@ -5,6 +5,7 @@ namespace App\Utils;
 
 use App\Model\ClassList;
 use Illuminate\Database\Eloquent\Collection;
+use Respect\Validation\Validator as v;
 
 class ClassListLogic extends Logic
 {
@@ -35,7 +36,6 @@ class ClassListLogic extends Logic
         $class->educator = $newClass['educator'];
         $class->type_id = $newClass['type_id'];
         $class->save();
-
         $this->container->PlanLogic->addPlan($class->id);
         return true;
     }
@@ -45,10 +45,6 @@ class ClassListLogic extends Logic
         $this->container->PlanLogic->delPlan($id);
 
         $class = ClassList::find($id);
-        if (count($class) == 0)
-        {
-            return false;
-        }
         $class->delete();
         return true;
     }

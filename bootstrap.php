@@ -1,5 +1,7 @@
 <?php
 
+use Respect\Validation\Validator as v;
+
 require 'vendor/autoload.php';
 
 $config['displayErrorDetails'] = true;
@@ -61,7 +63,10 @@ $container['UserLogic'] = function ($container) {
 $container['Auth'] = function ($container) {
     return new \App\Utils\Auth($container);
 };
-$container{'Validator'} = function ($container) {
-    return new \App\Validator\Validator;
+
+$container['validator'] = function ($container) {
+    return new App\Validation\Validator\validator();
 };
+
+v::with('App\\Validation\\Rules\\');
 require 'app/Routes.php';

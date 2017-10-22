@@ -10,6 +10,7 @@ class Plan extends Model
     protected $table = 'plan';
 
     protected $fillable = [
+        'godzina',
         'poniedzialek',
         'salap',
         'wtorek',
