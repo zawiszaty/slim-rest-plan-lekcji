@@ -1,0 +1,1 @@
+Kolejny plan lekcji tym razem napisany w slimie jako rest api. Projekt pisany trochę na szybko, bo nauczyciel chciał tym zastąpić normalny plan lekcji ale jakoś to nie wypaliło. Jeszcze nie wiedziałem jak  działa phpdocs i jak się ładniej rodziela logike :)
